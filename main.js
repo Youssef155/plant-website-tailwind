@@ -103,3 +103,24 @@ const activateLink = () => {
 }
 
 window.addEventListener("scroll", activateLink);
+
+
+/*--------------- Scroll Reveal Animation ---------------*/
+const sr = ScrollReveal({
+    origin: "top",
+    distance: "60px",
+    duration: 2500,
+    delay: 300,
+    reset: true
+})
+
+sr.reveal('.home_data, .about_head, .popular_head, .review_head, .footer_icon, .footer_content, .copy_right')
+sr.reveal('.home_img', {delay:500, scale:0.5})
+
+sr.reveal('.service_card, .popular_card', {interval: 100})
+
+
+sr.reveal('.about_leaf', {delay: 300, origin: "right"})
+
+sr.reveal('.about_item_1-img, .about_item_2-content', {origin: "left"})
+sr.reveal('.about_item_2-img, .about_item_1-content', {origin: "right"})
