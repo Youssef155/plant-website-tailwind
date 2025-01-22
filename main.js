@@ -48,6 +48,7 @@ const scrollHeader = () => {
 
 window.addEventListener("scroll", scrollHeader);
 
+
 /*--------------- Swiper Initialization ---------------*/
 const swiper = new Swiper('.swiper', {
     // Optional parameters
@@ -77,3 +78,28 @@ const swiper = new Swiper('.swiper', {
         },
     }
 });
+
+/*--------------- Activate links when scroll ---------------*/
+const activateLink = () => {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    let current = "home";
+
+    sections.forEach( section => {
+        const sectionTop = section.offsetTop;
+        if(this.scrollY > sectionTop - 60) {
+            current = section.getAttribute('id');
+        }
+    })
+
+    navLinks.forEach( link => {
+        link.classList.remove("active");
+
+        if(link.href.includes(current)){
+            link.classList.add("active");
+        }
+    })
+}
+
+window.addEventListener("scroll", activateLink);

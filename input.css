@@ -32,6 +32,10 @@ h3 {
     @apply text-lg font-bold duration-300;
 }
 
+.active {
+    @apply text-yellow-500;
+}
+
 .nav-link:hover {
     @apply text-yellow-500;
 }
